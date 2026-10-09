@@ -606,8 +606,8 @@ PlayerSettings:
   editorAssembliesCompatibilityLevel: 1
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-  metroPackageName: Proyecto_Game2D
-  metroPackageVersion: 
+  metroPackageName: ProyectoGame2D
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -615,7 +615,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Proyecto_Game2D
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: Proyecto_Game2D
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
@@ -682,7 +682,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 1
+  activeInputHandler: 0
   windowsGamepadBackendHint: 0
   cloudProjectId: b93140e9-3f13-4ba0-b5f7-b8ca81ba1e0a
   framebufferDepthMemorylessMode: 0
