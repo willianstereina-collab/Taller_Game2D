@@ -23,6 +23,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         {
             Debug.Log(
                 "Todavia faltan recursos: " +
+
                 GameManager.Instance.RecursosFaltantes()
             );
         }
