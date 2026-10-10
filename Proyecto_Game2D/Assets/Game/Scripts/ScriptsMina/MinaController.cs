@@ -58,4 +58,9 @@ public class MinaController : MonoBehaviour
             textoRecursos.text = mensaje;
         }
     }
+
+    public void RecibirDano(int dano)
+    {
+        // CONECTAR DEL DAÑO DEL PJ
+    }
 }
