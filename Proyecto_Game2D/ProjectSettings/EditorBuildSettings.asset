@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/Menu.unity
     guid: ffa3ed4faca77854baf6ed2e124d9997
-  - enabled: 1
+  - enabled: 0
     path: Assets/Game/Scenes/Mina.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
