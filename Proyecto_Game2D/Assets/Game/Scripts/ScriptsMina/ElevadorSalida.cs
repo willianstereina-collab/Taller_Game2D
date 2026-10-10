@@ -11,26 +11,22 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player"))
+            return;
 
-        if (GameManager.Instance == null) return;
+        MinaController mina = FindObjectOfType<MinaController>();
 
-        if (GameManager.Instance.CumpleRequisitoJefe())
+        if (mina == null || GameManager.Instance == null)
+            return;
+
+        if (mina.CumpleRequisitosElevador())
         {
             GameManager.Instance.IniciarEscena(escenaSiguiente);
         }
         else
         {
-            Debug.Log(
-                "Todavia faltan recursos: " +
-
-                GameManager.Instance.RecursosFaltantes()
-            );
+            Debug.Log("Todavia faltan recursos para usar el elevador.");
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
+    // Update is called once per frame
