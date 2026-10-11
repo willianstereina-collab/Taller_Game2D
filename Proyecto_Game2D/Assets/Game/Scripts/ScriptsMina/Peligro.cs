@@ -2,8 +2,6 @@ using UnityEngine;
 
 public class Peligro : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
     public enum TipoPeligro
     {
         Enemigo,
@@ -48,16 +46,22 @@ public class Peligro : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
-        {
-            MinaController mina = FindFirstObjectByType<MinaController>();
+        Golpear(other);
+    }
 
-            if (mina != null)
-            {
-                mina.RecibirDano(dano);
-            }
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        Golpear(other);
+    }
+
+    void Golpear(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) return;
+
+        if (other.TryGetComponent(out PlayerController jugador))
+        {
+            string causa = tipo == TipoPeligro.Enemigo ? "enemigo" : "obstaculo";
+            jugador.RecibirGolpe(causa, dano);
         }
     }
 }
-    // Update is called once per frame
-

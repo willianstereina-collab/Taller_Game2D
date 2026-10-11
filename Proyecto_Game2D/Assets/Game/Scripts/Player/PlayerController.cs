@@ -19,12 +19,17 @@ public class PlayerController : MonoBehaviour
     JugadorConfig jugador;
     float movimientoHorizontal;
     bool enSuelo;
+    Vector3 posicionInicial;
+
     bool invulnerable;
+    float tiempoInvulnerable;          // segundos que le quedan de invulnerabilidad
+    float tiempoParpadeo;              // segundos que faltan para el siguiente parpadeo
+    const float intervaloParpadeo = 0.1f;
 
     float multiplicadorVelocidad = 1;
     float multiplicadorSalto = 1;
-
-    readonly WaitForSeconds esperaParpadeo = new WaitForSeconds(0.1f);
+    float tiempoEfectoVelocidad;       // segundos que le quedan al efecto de velocidad
+    float tiempoEfectoSalto;           // segundos que le quedan al efecto de salto
 
     void Awake()
     {
@@ -39,12 +44,15 @@ public class PlayerController : MonoBehaviour
             GameManager.Instance.IniciarEscena("Mina");                  //gameManager temporal
         }
         jugador = GameManager.Instance.Config.jugador;
+
+        posicionInicial = transform.position;
     }
 
     void OnDisable()
     {
         if (sprite != null) sprite.enabled = true;
         invulnerable = false;
+        tiempoInvulnerable = 0;
     }
 
     void Update()
@@ -52,6 +60,8 @@ public class PlayerController : MonoBehaviour
         LeerInput();
         DetectarSuelo();
         ActualizarAnimator();
+        ActualizarInvulnerabilidad();
+        ActualizarEfectos();
 
         if (Input.GetKeyDown(teclaInteractuar))
             DetectarInteraccion();
@@ -109,23 +119,19 @@ public class PlayerController : MonoBehaviour
     void ActualizarAnimator()
     {
         if (animator == null) return;
+        float velocidadX = movimientoHorizontal;
+        if (velocidadX < 0) velocidadX = -velocidadX;
 
-        animator.SetFloat("VelocidadX", Mathf.Abs(movimientoHorizontal));
+        animator.SetFloat("VelocidadX", velocidadX);
         animator.SetBool("EnSuelo", enSuelo);
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Vacio"))
-        {
-            GameManager.Instance.RegistrarMuerte("caida");
-            Respawn();
-        }
-    }
 
     public void RecibirGolpe(string causa, int dano)
     {
         if (invulnerable) return;
+
+        if (animator != null) animator.SetTrigger("Herido");
 
         bool murio = GameManager.Instance.RegistrarGolpe(causa, dano);
 
@@ -135,52 +141,78 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            StartCoroutine(VentanaInvulnerabilidad());
+            invulnerable = true;
+            tiempoInvulnerable = jugador.invulnerabilidad;
+            tiempoParpadeo = 0;
         }
     }
 
-    System.Collections.IEnumerator VentanaInvulnerabilidad()
+    public void CaerAlVacio()
     {
-        invulnerable = true;
-        float duracion = jugador.invulnerabilidad;
-        float cronometro = 0;
-
-        while (cronometro < duracion)
-        {
-            if (sprite != null) sprite.enabled = !sprite.enabled;
-            yield return esperaParpadeo;
-            cronometro += 0.1f;
-        }
-
-        if (sprite != null) sprite.enabled = true;
-        invulnerable = false;
+        GameManager.Instance.RegistrarGolpe("caida", 1);
+        Respawn();
     }
 
     void Respawn()
     {
         if (GameManager.Instance.TieneCheckpoint(out Vector3 posicion))
             transform.position = posicion;
+        else
+            transform.position = posicionInicial;
 
         rb.linearVelocity = Vector2.zero;
     }
 
+    void ActualizarInvulnerabilidad()
+    {
+        if (!invulnerable) return;
+
+        tiempoInvulnerable -= Time.deltaTime;
+        tiempoParpadeo -= Time.deltaTime;
+
+        if (tiempoParpadeo <= 0)
+        {
+            if (sprite != null) sprite.enabled = !sprite.enabled;
+            tiempoParpadeo = intervaloParpadeo;
+        }
+
+        if (tiempoInvulnerable <= 0)
+        {
+            invulnerable = false;
+            if (sprite != null) sprite.enabled = true;
+        }
+    }
+
+
     public void AplicarEfecto(RecursoConfig recurso)
     {
+        if (recurso.duracion <= 0) return;
+
         switch (recurso.efecto)
         {
             case "velocidad":
-                StartCoroutine(EfectoTemporal(() => multiplicadorVelocidad = recurso.valor, () => multiplicadorVelocidad = 1, recurso.duracion));
+                multiplicadorVelocidad = recurso.valor;
+                tiempoEfectoVelocidad = recurso.duracion;
                 break;
             case "salto":
-                StartCoroutine(EfectoTemporal(() => multiplicadorSalto = recurso.valor, () => multiplicadorSalto = 1, recurso.duracion));
+                multiplicadorSalto = recurso.valor;
+                tiempoEfectoSalto = recurso.duracion;
                 break;
         }
     }
 
-    System.Collections.IEnumerator EfectoTemporal(System.Action aplicar, System.Action revertir, float duracion)
+    void ActualizarEfectos()
     {
-        aplicar();
-        yield return new WaitForSeconds(duracion);
-        revertir();
+        if (tiempoEfectoVelocidad > 0)
+        {
+            tiempoEfectoVelocidad -= Time.deltaTime;
+            if (tiempoEfectoVelocidad <= 0) multiplicadorVelocidad = 1;
+        }
+
+        if (tiempoEfectoSalto > 0)
+        {
+            tiempoEfectoSalto -= Time.deltaTime;
+            if (tiempoEfectoSalto <= 0) multiplicadorSalto = 1;
+        }
     }
 }

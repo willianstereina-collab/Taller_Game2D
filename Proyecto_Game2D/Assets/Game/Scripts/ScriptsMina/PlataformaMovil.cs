@@ -1,34 +1,38 @@
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlataformaMovil : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
-
     public Transform puntoA;
     public Transform puntoB;
     public float velocidad = 2f;
 
     private Transform destino;
+    private Rigidbody2D rb;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     void Start()
     {
         destino = puntoB;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        transform.position = Vector3.MoveTowards(
-            transform.position,
+        Vector2 nuevaPosicion = Vector2.MoveTowards(
+            rb.position,
             destino.position,
-            velocidad * Time.deltaTime
+            velocidad * Time.fixedDeltaTime
         );
 
-        if (Vector3.Distance(transform.position, destino.position) < 0.05f)
+        rb.MovePosition(nuevaPosicion);
+
+        if (Vector2.Distance(rb.position, destino.position) < 0.05f)
         {
             destino = destino == puntoA ? puntoB : puntoA;
         }
     }
 }
-    // Update is called once per frame
-
