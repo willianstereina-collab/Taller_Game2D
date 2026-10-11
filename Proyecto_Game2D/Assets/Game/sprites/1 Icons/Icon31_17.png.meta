@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: bb38a79354da9c64db198149b0b26982
+guid: ede25058acb550e4bae4e24c785d2154
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3963988999391348915
-    second: BigCrystal-Destroy_0
+      213: -103535465883799319
+    second: Icon31_17_0
+  - first:
+      213: -4547735409619501039
+    second: Icon31_17_1
+  - first:
+      213: -8829188110699528184
+    second: Icon31_17_2
+  - first:
+      213: -2828273613154646710
+    second: Icon31_17_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,12 +135,56 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BigCrystal-Destroy_0
+      name: Icon31_17_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 13
-        width: 35
+        x: 0
+        y: 8
+        width: 18
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e07756da0b209ef0800000000000000
+      internalID: -103535465883799319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon31_17_1
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 0
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1100a296db233e0c0800000000000000
+      internalID: -4547735409619501039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon31_17_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 18
+        width: 12
         height: 13
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -141,8 +194,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d47f8b5d1051df8c0800000000000000
-      internalID: -3963988999391348915
+      spriteID: 80007ae313c687580800000000000000
+      internalID: -8829188110699528184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon31_17_3
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 11
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a458e483224ffb8d0800000000000000
+      internalID: -2828273613154646710
       vertices: []
       indices: 
       edges: []
@@ -151,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BigCrystal-Destroy_0: -3963988999391348915
+      Icon31_17_0: -103535465883799319
+      Icon31_17_1: -4547735409619501039
+      Icon31_17_2: -8829188110699528184
+      Icon31_17_3: -2828273613154646710
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

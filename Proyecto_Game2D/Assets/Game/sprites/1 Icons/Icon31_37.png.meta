@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: bb38a79354da9c64db198149b0b26982
+guid: 47b10060340ab24499df439003a9bbec
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3963988999391348915
-    second: BigCrystal-Destroy_0
+      213: 1124566030547282107
+    second: Icon31_37_0
+  - first:
+      213: 2572722202471452189
+    second: Icon31_37_1
+  - first:
+      213: -4010046954853912534
+    second: Icon31_37_2
+  - first:
+      213: 6422668073311011004
+    second: Icon31_37_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BigCrystal-Destroy_0
+      name: Icon31_37_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 13
-        width: 35
-        height: 13
+        x: 0
+        y: 16
+        width: 19
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d47f8b5d1051df8c0800000000000000
-      internalID: -3963988999391348915
+      spriteID: bb8ed39b8d24b9f00800000000000000
+      internalID: 1124566030547282107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon31_37_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 13
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1e4218563524b320800000000000000
+      internalID: 2572722202471452189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon31_37_2
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 15
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a20bb4b6a837958c0800000000000000
+      internalID: -4010046954853912534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Icon31_37_3
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 0
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb002fb7596e12950800000000000000
+      internalID: 6422668073311011004
       vertices: []
       indices: 
       edges: []
@@ -151,7 +226,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BigCrystal-Destroy_0: -3963988999391348915
+      Icon31_37_0: 1124566030547282107
+      Icon31_37_1: 2572722202471452189
+      Icon31_37_2: -4010046954853912534
+      Icon31_37_3: 6422668073311011004
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

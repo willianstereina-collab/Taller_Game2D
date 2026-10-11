@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bb38a79354da9c64db198149b0b26982
+guid: 86f8ecabe6365af4fa4f7999dd3098f0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3963988999391348915
-    second: BigCrystal-Destroy_0
+      213: 2407714294998647498
+    second: 0_Monster_Idle_006_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BigCrystal-Destroy_0
+      name: 0_Monster_Idle_006_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 13
-        width: 35
-        height: 13
+        x: 35
+        y: 154
+        width: 290
+        height: 171
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d47f8b5d1051df8c0800000000000000
-      internalID: -3963988999391348915
+      spriteID: ac2460a056be96120800000000000000
+      internalID: 2407714294998647498
       vertices: []
       indices: 
       edges: []
@@ -151,7 +151,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BigCrystal-Destroy_0: -3963988999391348915
+      0_Monster_Idle_006_0: 2407714294998647498
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

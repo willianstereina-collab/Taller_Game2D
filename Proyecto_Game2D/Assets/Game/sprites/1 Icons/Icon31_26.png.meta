@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: bb38a79354da9c64db198149b0b26982
+guid: 0891523564159fb409e0e33666ee6a52
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3963988999391348915
-    second: BigCrystal-Destroy_0
+      213: -6157370186315128386
+    second: Icon31_26_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BigCrystal-Destroy_0
+      name: Icon31_26_0
       rect:
         serializedVersion: 2
-        x: 13
-        y: 13
-        width: 35
-        height: 13
+        x: 1
+        y: 0
+        width: 30
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d47f8b5d1051df8c0800000000000000
-      internalID: -3963988999391348915
+      spriteID: eb12b1e4070ac8aa0800000000000000
+      internalID: -6157370186315128386
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BigCrystal-Destroy_0: -3963988999391348915
+      Icon31_26_0: -6157370186315128386
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
